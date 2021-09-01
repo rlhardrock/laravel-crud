@@ -1,8 +1,13 @@
-@extends('layouts.tempbase')
+@extends('adminlte::page')
 
-@section('crud-content')
+@section('title', 'DashBoard')
 
-<h2>NEW ANIMAL</h2>
+@section('content_header')
+    <h1>ANIMAL INSCRIPTION</h1>
+@stop
+
+
+@section('content')
 
 <form action="/animal" method="POST">
 
@@ -32,4 +37,4 @@
 
 </form>
 
-@endsection
+@stop
