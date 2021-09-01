@@ -23,8 +23,8 @@ Route::get('/', function(){
 //Route::get('/', 'App\Http\Controllers\CommenceController@index');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dash.index');
-})->name('dash');
+    return view('dashcontrol.index');
+})->name('dashboard');
 
 Route::resource('/animal','App\Http\Controllers\AnimalController');
 

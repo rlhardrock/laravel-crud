@@ -1,15 +1,17 @@
 @extends('layouts.tempbase')
 
 @section('css')
-<link hfer="https://cdn.datatables.net/1.11.0/css/dataTables.bootstrap5.min.css" rel="stylesheet"/>
+
+<link hfer="https://cdn.datatables.net/1.11.0/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
+
 @endsection
 
 @section('crud-content')
 
-<table id="animals" class="table table-borderer table-dark table-striped" style="width:100%">
+<table id="animals" class="table table-hover table-borderer table-light table-striped" style="width:100%">
     <thead>
         <tr>
-            <th scope="col">ID</th>
+            {{-- <th scope="col">ID</th> --}}
             <th scope="col">SPECIE</th>
             <th scope="col">REGION</th>
             <th scope="col">BIOME</th>
@@ -20,7 +22,7 @@
     <tbody>
         @foreach ($animals as $animal)
         <tr>
-            <td>{{$animal->id}}</td>
+            {{-- <td>{{$animal->id}}</td> --}}
             <td>{{$animal->specie}}</td>
             <td>{{$animal->region}}</td>
             <td>{{$animal->biome}}</td>
@@ -46,9 +48,14 @@
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.datatables.net/1.11.0/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.11.0/js/dataTables.bootstrap5.min.js"></script>
+    {{-- <script src="https://cdn.datatables.net/select/1.3.3/js/dataTables.select.min.js"></script> --}}
     <script>
         $(document).ready(function() {
             $('#animals').DataTable({
+                select: true,
+                select:{
+                    style: 'multi',
+                },
                 "lengthMenu": [[5,10,50,-1],[5,10,50,"All"]]
             });
         });

@@ -11,9 +11,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 
     <title>ANIMAL CRAFT</title>
+
 </head>
 <body>
-    <h1 class="bg-primary text-white text-center">Animal World!</h1>
+    <h1 class="bg-primary text-white text-center">ANIMALSPHERE CYBERWORLD!</h1>
 
     <div class="container">
         @yield('crud-content')
