@@ -41,7 +41,7 @@
         </tbody>
     </table>
 
-    <a href="animal/create" class="btn btn-primary mb-3">ANIMAL</a>
+    <a href="animal/create" class="btn btn-primary mb-3">+ ANIMAL</a>
 @stop
 
 @section('css')

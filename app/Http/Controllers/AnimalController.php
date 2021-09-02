@@ -7,6 +7,11 @@ use App\Models\Animal;
 
 class AnimalController extends Controller
 {
+    //Protector de acceso no autorizado
+    public function __construct(){
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *

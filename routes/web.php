@@ -15,30 +15,24 @@ use Illuminate\Support\Facades\View;
 |
 */
 
-/* Route::get('/', function(){
-    return view('welcome');
-}); */
-
 Route::get('/', function(){
-    return view('auth.login');
+    return view('welcome');
 });
+
+/* Route::get('/', function(){
+    return view('auth.login');
+}); */
 
 //Route , PathController@method
 //Route::get('/', 'App\Http\Controllers\CommenceController@index');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashcontrol.index');
+    return view('dashboard');
 })->name('dashboard');
 
 Route::resource('/animal','App\Http\Controllers\AnimalController');
 
-
-
-
-
-
-
-
+//Ejemplos
 
 // parametros por default
 Route::get('/player/{team}', function($team='Multipurpose'){

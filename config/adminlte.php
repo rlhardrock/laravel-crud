@@ -103,10 +103,10 @@ return [
     */
 
     'classes_auth_card' => 'card-outline card-primary',
-    'classes_auth_header' => '',
-    'classes_auth_body' => '',
-    'classes_auth_footer' => '',
-    'classes_auth_icon' => '',
+    'classes_auth_header' => 'bg-gradient-success',
+    'classes_auth_body' => 'bg-gradient-dark',
+    'classes_auth_footer' => 'text-center',
+    'classes_auth_icon' => 'fa-fw text-light',
     'classes_auth_btn' => 'btn-flat btn-primary',
 
     /*
@@ -229,7 +229,7 @@ return [
         [
             'type'         => 'navbar-search',
             'text'         => 'search',
-            'topnav_right' => true,
+            'topnav_right' => false,
         ],
         [
             'type'         => 'fullscreen-widget',
@@ -247,23 +247,37 @@ return [
             'can'  => 'manage-blog',
         ],
         [
-            'text'        => 'pages',
-            'url'         => 'admin/pages',
+            'text'        => 'Control Master',
+            'url'         => 'dashboard',
             'icon'        => 'far fa-fw fa-file',
-            'label'       => 4,
+            'label'       => 'DCM',
             'label_color' => 'success',
+        ],
+        [
+            'text'        => 'Animal',
+            'url'         => 'animal',
+            'icon'        => 'far fa-fw fa-file',
+            'label'       => 'Information',
+            'label_color' => 'danger',
+        ],
+        [
+            'text'        => 'Vehicles',
+            'url'         => 'vehicles',
+            'icon'        => 'far fa-fw fa-file',
+            'label'       => 'AutoParts',
+            'label_color' => 'info',
         ],
         ['header' => 'account_settings'],
         [
             'text' => 'profile',
-            'url'  => 'admin/settings',
+            'url'  => 'user/profile',
             'icon' => 'fas fa-fw fa-user',
         ],
-        [
+        /* [
             'text' => 'change_password',
-            'url'  => 'admin/settings',
+            'url'  => 'user/profile',
             'icon' => 'fas fa-fw fa-lock',
-        ],
+        ], */
         [
             'text'    => 'multilevel',
             'icon'    => 'fas fa-fw fa-share',
@@ -304,18 +318,22 @@ return [
         ],
         ['header' => 'labels'],
         [
-            'text'       => 'important',
+            'text'       => 'Important',
             'icon_color' => 'red',
             'url'        => '#',
         ],
         [
-            'text'       => 'warning',
+            'text'       => 'Warning',
             'icon_color' => 'yellow',
             'url'        => '#',
         ],
         [
-            'text'       => 'information',
-            'icon_color' => 'cyan',
+            'text'       => 'Information',
+            'icon_color' => 'blue',
+            'url'        => '#',
+        ],[
+            'text'       => 'Success',
+            'icon_color' => 'green',
             'url'        => '#',
         ],
     ],
