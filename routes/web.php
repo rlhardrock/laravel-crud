@@ -15,13 +15,13 @@ use Illuminate\Support\Facades\View;
 |
 */
 
-Route::get('/', function(){
-    return view('welcome');
-});
-
 /* Route::get('/', function(){
-    return view('auth.login');
+    return view('welcome');
 }); */
+
+Route::get('/', function(){
+    return view('auth.login');
+});
 
 //Route , PathController@method
 //Route::get('/', 'App\Http\Controllers\CommenceController@index');
