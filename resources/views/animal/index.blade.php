@@ -29,10 +29,10 @@
                     <td>
             <form action="{{route('animal.destroy',$animal->id)}}" method="POST">
 
-                <a href="/animal/{{$animal->id}}/edit" class="btn btn-success">EDIT</a>
+                <a href="/animal/{{$animal->id}}/edit" class="btn btn-success"><i class="fas fa-calendar-plus"></i>   EDIT</a>
                 @csrf
                 @method('DELETE')
-                <button type="submit" class="btn btn-danger">REMOVE</button>
+                <button type="submit" class="btn btn-danger"><i class="far fa-calendar-minus"></i>  REMOVE</button>
 
             </form>
                 </td>
