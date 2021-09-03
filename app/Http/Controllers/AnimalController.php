@@ -45,6 +45,7 @@ class AnimalController extends Controller
     public function store(Request $request)
     {
         $animals = new Animal();
+        $animals->id = $request->get('id');
         $animals->specie = $request->get('specie');
         $animals->region = $request->get('region');
         $animals->biome = $request->get('biome');
@@ -103,12 +104,12 @@ class AnimalController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    /* public function destroy($id)
+    public function destroy($id)
     {
         $animal = Animal::find($id);
         $animal->delete();
-        return redirect('/animal');
-    } */
+        return redirect('/animal')->with('Delete','OK');
+    }
 
     /* public function destroy($id)
     {
@@ -116,9 +117,10 @@ class AnimalController extends Controller
         return redirect('/animal');
     } */
 
-    public function destroy($id)
+    /* public function destroy($id)
     {
         Animal::destroy([$id]);
         return redirect('/animal');
-    }
+    } */
+
 }
