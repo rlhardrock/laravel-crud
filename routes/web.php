@@ -3,6 +3,8 @@
 use Illuminate\Routing\Route as RoutingRoute;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\View;
+use App\Http\Controllers\AnimalController;
+use App\Http\Controllers\AvengerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,14 +25,31 @@ Route::get('/', function(){
     return view('auth.login');
 });
 
-//Route , PathController@method
-//Route::get('/', 'App\Http\Controllers\CommenceController@index');
-
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
+//Route , PathController@method
+//Route::get('/', 'App\Http\Controllers\CommenceController@index');
+
 Route::resource('/animal','App\Http\Controllers\AnimalController');
+
+/* Route::middleware(['auth:sanctum', 'verified'])->group(function(){
+    Route::resource('/animals', AnimalController::class);
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+}); */
+
+Route::resource('/avenger','App\Http\Controllers\AvengerController');
+
+/* Route::middleware(['auth:sanctum', 'verified'])->group(function(){
+    Route::resource('/avengers', AvengerController::class);
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+}); */
+
 
 //Ejemplos
 

@@ -261,6 +261,20 @@ return [
             'label_color' => 'danger',
         ],
         [
+            'text'        => 'ThunderBoltz',
+            'url'         => 'avenger',
+            'icon'        => 'fas fa-fw fa-dragon',
+            'label'       => 'Linneus',
+            'label_color' => 'success',
+        ],
+        [
+            'text'        => 'Comic',
+            'url'         => 'comic',
+            'icon'        => 'fas fa-fw fa-user-secret',
+            'label'       => 'rules',
+            'label_color' => 'warning',
+        ],
+        [
             'text'        => 'Vehicles',
             'url'         => 'vehicles',
             'icon'        => 'fas fa-fw fa-car',

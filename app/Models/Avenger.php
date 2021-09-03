@@ -5,13 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Animal extends Model
+class Avenger extends Model
 {
     use HasFactory;
     protected $fillable = [
-            'specie',
+            'name',
+            'bioma',
             'region',
-            'biome',
-            'country',
+            'conservation',
+            'scientific',
+            'family',
+            'orden',
+            'photograph'
         ];
 }
