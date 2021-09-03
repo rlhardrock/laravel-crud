@@ -76,7 +76,7 @@
                     title:'Deleted!',
                     text:'The information has been deleted.',
                     icon:'success',
-                    backdrop: `rgba(0,0,123,0.4)`}
+                    backdrop: `rgba(0,0,123,0.4)`},
                 );
             </script>
     @endif
@@ -92,7 +92,7 @@
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
             confirmButtonText: 'Eliminate!',
-            backdrop: `rgba(0,0,123,0.4)`
+            backdrop: `rgba(43, 76, 189, 0.5)`
             }).then((result) => {
                 if (result.value) {
                     this.submit()
