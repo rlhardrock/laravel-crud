@@ -19,6 +19,7 @@
                 {{-- <th scope="col">FAMILY</th> --}}
                 {{-- <th scope="col">ORDEN</th> --}}
                 <th scope="col">PHOTO</th>
+                <th scope="col">ACTIONS</th>
             </tr>
         </thead>
         <tbody>
@@ -32,7 +33,9 @@
                     <td>{{$avenger->scientific}}</td>
                     {{-- <td>{{$avenger->family}}</td> --}}
                     {{-- <td>{{$avenger->orden}}</td> --}}
-                    <td>{{$avenger->photograph}}</td>
+                    <td class="border px-14 width-300 height-300">
+                        <img src="/photograph/{{$avenger->photograph}}" width="50%" />
+                    </td>
                     <td>
                     <form action="{{route('avenger.destroy',$avenger->id)}}" method="POST" class="form-destroy">
 

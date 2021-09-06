@@ -16,14 +16,14 @@ class CreateAvengersTable extends Migration
         Schema::create('avengers', function (Blueprint $table) {
             $table->id();
 
-            $table->string('name');
-            $table->string('bioma');
-            $table->string('region');
-            $table->string('conservation');
-            $table->string('scientific');
-            $table->string('family');
-            $table->string('orden');
-            $table->string('photograph');
+            $table->string('name')->nullable();
+            $table->string('bioma')->nullable();
+            $table->string('region')->nullable();
+            $table->string('conservation')->nullable();
+            $table->string('scientific')->nullable();
+            $table->string('family')->nullable();
+            $table->string('orden')->nullable();
+            $table->string('photograph')->nullable();
 
             $table->timestamps();
         });

@@ -43,6 +43,7 @@ class AvengerController extends Controller
      */
     public function store(Request $request)
     {
+
         $avengers = new Avenger();
         $avengers->id = $request->get('id');
         $avengers->name = $request->get('name');
@@ -52,7 +53,14 @@ class AvengerController extends Controller
         $avengers->scientific = $request->get('scientific');
         $avengers->family = $request->get('family');
         $avengers->orden = $request->get('orden');
-        $avengers->photograph = $request->get('photograph');
+
+        if($photograph = $request -> file('photograph')){
+            $routeSaveImg = 'photograph/';
+            $imageAvenger = date('YMdhis').".".$photograph->getClientOriginalExtension();
+            $photograph->move($routeSaveImg, $imageAvenger);
+            $avengers['photograph'] = $imageAvenger;
+        }
+
         $avengers->save();
         return redirect('/avenger');
     }

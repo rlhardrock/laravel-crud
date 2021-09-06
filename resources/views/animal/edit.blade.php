@@ -11,7 +11,7 @@
 <form action="/animal/{{$animal->id}}" method="POST">
 
     @csrf
-    @method('PUT')
+    @method('PATCH')
 
     <div class="mb-3">
         <label class="form-label">Specie</label>

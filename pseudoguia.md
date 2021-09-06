@@ -1,6 +1,8 @@
 LARAVEL   pass laravelJETSTREAM
 sudo gedit /etc/hosts
 
+php artisan config:clear
+
 --> usar composer directo
 
 composer create-project laravel/laravel project
@@ -83,3 +85,17 @@ php artisan r:l
 //lista rutas en terminal
 
 AppServicesProvider   cambiador de palabras para las rutas
+public function boot()
+    {
+        Schema::defaultStringLength(191);
+    }
+
+Routes/web.php
+use Illuminate\Support\Facades\View;
+
+DB_CONNECTION=mysql
+DB_HOST=remotemysql.com
+DB_PORT=3306
+DB_DATABASE=8nwVsILReC
+DB_USERNAME=8nwVsILReC
+DB_PASSWORD=WG0c4egIsQ

@@ -15,10 +15,10 @@ class CreateAnimalsTable extends Migration
     {
         Schema::create('animals', function (Blueprint $table) {
             $table->id();
-            $table->string('specie');
-            $table->string('region');
-            $table->string('biome');
-            $table->string('country');
+            $table->string('specie')->nullable();
+            $table->string('region')->nullable();
+            $table->string('biome')->nullable();
+            $table->string('country')->nullable();
             $table->timestamps();
         });
     }
