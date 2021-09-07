@@ -33,8 +33,8 @@
                     <td>{{$avenger->scientific}}</td>
                     {{-- <td>{{$avenger->family}}</td> --}}
                     {{-- <td>{{$avenger->orden}}</td> --}}
-                    <td class="border px-14 width-300 height-300">
-                        <img src="/photograph/{{$avenger->photograph}}" width="50%" />
+                    <td>
+                        <img src="/photograph/{{$avenger->photograph}}" width="150px" height="150px"/>
                     </td>
                     <td>
                     <form action="{{route('avenger.destroy',$avenger->id)}}" method="POST" class="form-destroy">

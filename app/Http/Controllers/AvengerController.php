@@ -86,7 +86,7 @@ class AvengerController extends Controller
     {
         //view  edit.blade.php
         $avenger = Avenger::find($id);
-        return view('avenger.edit')
+        return view('avenger.edit', compact('id'))
         ->with('avenger',$avenger);
     }
 
@@ -97,18 +97,30 @@ class AvengerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Avenger $avenger)
     {
-        $avenger = Avenger::find($id);
+        /* $id,  */
+        $ravager = $request->all();
+        /* $avenger = Avenger::find($id);
         $avenger->name = $request->get('name');
         $avenger->bioma = $request->get('bioma');
         $avenger->region = $request->get('region');
         $avenger->conservation = $request->get('conservation');
         $avenger->scientific = $request->get('scientific');
         $avenger->family = $request->get('family');
-        $avenger->orden = $request->get('orden');
-        $avenger->photograph = $request->get('photograph');
-        $avenger->save();
+        $avenger->orden = $request->get('orden'); */
+
+        if($photograph = $request -> file('photograph')){
+            $routeSaveImg = 'photograph/';
+            $imageAvenger = date('YMdHis').".".$photograph->getClientOriginalExtension();
+            $photograph->move($routeSaveImg, $imageAvenger);
+            $ravager['photograph'] = $imageAvenger;
+        }else{
+            unset($ravager['photograph']);
+        }
+
+        $avenger->update($ravager);
+        /*  return redirect()->route('avenger.index');*/
         return redirect('/avenger');
     }
 

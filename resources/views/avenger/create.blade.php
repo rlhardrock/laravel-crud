@@ -42,9 +42,9 @@
                 <div class="grid grid-cols-1">
                     <label class="form-label text-500 font-semibol">Conservation Status</label>
                     <p>
-                    Extinct (EX)/ Extinct in the Wild (EW)/ Critically Endangered (CR)/
-                    Endangered (EN)/ Vulnerable (VU)/ Near Threatened (NT)/ Least Concern (LC)/
-                    Extinct in the Wild (EW)/ Data Deficient (DD)/ Not Evaluated (NE)
+                    Extinct (EX) / Extinct in the Wild (EW) / Critically Endangered (CR) /
+                    Endangered (EN) / Vulnerable (VU) / Near Threatened (NT) / Least Concern (LC) /
+                    Extinct in the Wild (EW) / Data Deficient (DD) / Not Evaluated (NE)
                     </p>
                     <input class="form-control"type="text" name="conservation" id="conservation" />
                 </div>
