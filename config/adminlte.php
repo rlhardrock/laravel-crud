@@ -261,7 +261,7 @@ return [
             'label_color' => '',
         ],
         [
-            'text'        => 'ThunderBoltz',
+            'text'        => 'Zoomaniac',
             'url'         => 'avenger',
             'icon'        => 'fas fa-fw fa-dragon',
             'label'       => '',

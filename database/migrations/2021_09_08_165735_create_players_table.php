@@ -18,8 +18,8 @@ class CreatePlayersTable extends Migration
 
             $table->string('name')->nullable();
             $table->string('surname')->nullable();
-            $table->string('email')->unique();
-            $table->string('cellphone')->unique();
+            $table->string('email')->unique()->nullable();
+            $table->string('cellphone')->unique()->nullable();
             $table->string('city')->nullable();
             $table->string('profession')->nullable();
             $table->string('university')->nullable();
@@ -27,7 +27,7 @@ class CreatePlayersTable extends Migration
             $table->string('position')->nullable();
             $table->string('alias')->nullable();
             $table->date('inscription')->nullable();
-            $table->boolean('status')->default(false);
+            $table->string('status')->nullable();
             $table->string('photograph')->nullable();
 
             $table->timestamps();
@@ -44,3 +44,4 @@ class CreatePlayersTable extends Migration
         Schema::dropIfExists('players');
     }
 }
+

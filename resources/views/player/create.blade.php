@@ -61,7 +61,7 @@
                 </div>
                 <div class="grid grid-cols-1">
                     <label class="form-label text-500 font-semibol">Status</label>
-                    <input class="form-control" type="checkbox" name="status" id="status" />
+                    <input class="form-control" type="text" name="status" id="status" />
                 </div>
 
 

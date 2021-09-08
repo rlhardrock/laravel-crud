@@ -17,10 +17,10 @@
                 {{-- <th scope="col">CELLPHONE</th> --}}
                 {{-- <th scope="col">CITY</th> --}}
                 <th scope="col">PROFESSION</th>
-                <th scope="col">UNIVERSITY</th>
-                {{-- <th scope="col">TEAM</th> --}}
-                <th scope="col">POSITION</th>
-                {{-- <th scope="col">ALIAS</th> --}}
+                {{-- <th scope="col">UNIVERSITY</th> --}}
+                <th scope="col">TEAM</th>
+                {{-- <th scope="col">POSITION</th> --}}
+                <th scope="col">ALIAS</th>
                 {{-- <th scope="col">INSCRIPTION</th> --}}
                 <th scope="col">STATUS</th>
                 <th scope="col">PLAYER</th>
@@ -37,10 +37,10 @@
                     {{-- <td>{{$player->cellphone}}</td> --}}
                     {{-- <td>{{$player->city}}</td> --}}
                     <td>{{$player->profession}}</td>
-                    <td>{{$player->university}}</td>
-                    {{-- <td>{{$player->team}}</td> --}}
-                    <td>{{$player->position}}</td>
-                    {{-- <td>{{$player->alias}}</td> --}}
+                    {{-- <td>{{$player->university}}</td> --}}
+                    <td>{{$player->team}}</td>
+                    {{-- <td>{{$player->position}}</td> --}}
+                    <td>{{$player->alias}}</td>
                     {{-- <td>{{$player->inscription}}</td> --}}
                     <td>{{$player->status}}</td>
                     <td>
@@ -61,7 +61,7 @@
         </tbody>
     </table>
 
-    <a href="player/create" class="btn btn-primary mb-3">+ player</a>
+    <a href="player/create" class="btn btn-primary mb-3">+ PLAYER</a>
 
 
 @stop
