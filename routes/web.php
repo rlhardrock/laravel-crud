@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\View;
 use App\Http\Controllers\AnimalController;
 use App\Http\Controllers\AvengerController;
+use App\Http\Controllers\PlayerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,7 +51,18 @@ Route::resource('/avenger','App\Http\Controllers\AvengerController');
     })->name('dashboard');
 }); */
 
+Route::resource('/player','App\Http\Controllers\PlayerController');
 
+/* Route::middleware(['auth:sanctum', 'verified'])->group(function(){
+    Route::resource('/players', PlayerController::class);
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+}); */
+
+
+
+/*
 //Ejemplos
 
 // parametros por default
@@ -83,3 +95,5 @@ if (View::exists('player')){
         return 'The view do not exits';
     });
 }
+
+*/

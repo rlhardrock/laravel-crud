@@ -49,7 +49,6 @@
                     <input class="form-control"type="text" name="conservation" id="conservation" />
                 </div>
 
-
                 <div class="grid grid-cols-1">
                     <label class="form-label text-500 font-semibold">Photograph</label>
                     <div class='flex items-center justify-center w-full'>

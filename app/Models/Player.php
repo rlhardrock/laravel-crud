@@ -20,6 +20,7 @@ class Player extends Model
         'position',
         'alias',
         'inscription',
-        'status'
+        'status',
+        'photograph'
     ];
 }

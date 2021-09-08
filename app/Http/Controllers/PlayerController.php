@@ -2,10 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Player;
 use Illuminate\Http\Request;
 
 class PlayerController extends Controller
 {
+    //Protector de acceso no autorizado
+    public function __construct(){
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +18,10 @@ class PlayerController extends Controller
      */
     public function index()
     {
-        //
+        $players = Player::all();
+        //view  index.blade.php
+        return view('player.index')
+        ->with('players',$players);
     }
 
     /**
@@ -23,7 +31,8 @@ class PlayerController extends Controller
      */
     public function create()
     {
-        //
+        //view  create.blade.php
+        return view('player.create');
     }
 
     /**
@@ -34,7 +43,30 @@ class PlayerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $players = new Player();
+        $players->id = $request->get('id');
+        $players->name = $request->get('name');
+        $players->surname = $request->get('surname');
+        $players->email = $request->get('email');
+        $players->cellphone = $request->get('cellphone');
+        $players->city = $request->get('city');
+        $players->profession = $request->get('profession');
+        $players->team = $request->get('team');
+        $players->position = $request->get('position');
+        $players->alias = $request->get('alias');
+        $players->inscription = $request->get('inscription');
+        $players->status = $request->get('status');
+
+        if($photograph = $request -> file('photograph')){
+            $routeSaveImg = 'photograph/';
+            $imageplayer = date('YMdhis').".".$photograph->getClientOriginalExtension();
+            $photograph->move($routeSaveImg, $imageplayer);
+            $players['photograph'] = $imageplayer;
+        }
+
+        $players->save();
+        return redirect('/player');
     }
 
     /**
@@ -56,7 +88,10 @@ class PlayerController extends Controller
      */
     public function edit($id)
     {
-        //
+        //view  edit.blade.php
+        $player = Player::find($id);
+        return view('player.edit', compact('id'))
+        ->with('player',$player);
     }
 
     /**
@@ -66,9 +101,37 @@ class PlayerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Player $player)
     {
-        //
+        /* $id,  */
+        $ravager = $request->all();
+        /*
+        $players->id = $request->get('id');
+        $players->name = $request->get('name');
+        $players->surname = $request->get('surname');
+        $players->email = $request->get('email');
+        $players->cellphone = $request->get('cellphone');
+        $players->city = $request->get('city');
+        $players->profession = $request->get('profession');
+        $players->team = $request->get('team');
+        $players->position = $request->get('position');
+        $players->alias = $request->get('alias');
+        $players->inscription = $request->get('inscription');
+        $players->status = $request->get('status');
+        */
+
+        if($photograph = $request -> file('photograph')){
+            $routeSaveImg = 'photograph/';
+            $imageplayer = date('YMdHis').".".$photograph->getClientOriginalExtension();
+            $photograph->move($routeSaveImg, $imageplayer);
+            $ravager['photograph'] = $imageplayer;
+        }else{
+            unset($ravager['photograph']);
+        }
+
+        $player->update($ravager);
+        /*  return redirect()->route('player.index');*/
+        return redirect('/player');
     }
 
     /**
@@ -79,6 +142,10 @@ class PlayerController extends Controller
      */
     public function destroy($id)
     {
-        //
+        {
+        $player = Player::find($id);
+        $player->delete();
+        return redirect('/player')->with('Delete','OK');
+    }
     }
 }

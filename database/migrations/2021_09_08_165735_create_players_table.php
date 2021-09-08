@@ -28,6 +28,7 @@ class CreatePlayersTable extends Migration
             $table->string('alias')->nullable();
             $table->date('inscription')->nullable();
             $table->boolean('status')->default(false);
+            $table->string('photograph')->nullable();
 
             $table->timestamps();
         });
