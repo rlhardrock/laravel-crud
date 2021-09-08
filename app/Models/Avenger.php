@@ -9,13 +9,13 @@ class Avenger extends Model
 {
     use HasFactory;
     protected $fillable = [
-            'name',
-            'bioma',
-            'region',
-            'conservation',
-            'scientific',
-            'family',
-            'orden',
-            'photograph'
-        ];
+        'name',
+        'bioma',
+        'region',
+        'conservation',
+        'scientific',
+        'family',
+        'orden',
+        'photograph'
+    ];
 }
